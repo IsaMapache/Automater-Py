@@ -10,7 +10,7 @@ existing_folders = glob.glob(os.path.join(directory, folder_name + '*'))
 
 
 if existing_folders:
-    # Try to find the highest number appended to the folder name
+    # Try to find the highest number appended to the folder namee
     try:
         highest_number = max([int(folder.split('_')[-1]) for folder in existing_folders if folder.split('_')[-1].isdigit()])
     # If there are no numbers appended to the folder name, set the highest number to 0
