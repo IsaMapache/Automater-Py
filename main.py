@@ -31,32 +31,46 @@ with open(os.path.join(directory, folder_name, 'readme.txt'), 'w') as f:
 with open(os.path.join(directory, folder_name, 'main.js'), 'w') as f:
     pass
 
-# Create the html file
-html = """<!DOCTYPE html>
-<html>
-<head>
-  <style>
-    body {
-      background-color: black;
-      color: white;
-      text-align: center;
-      font-family: Arial Black;
-    }
-  </style>
-</head>
-<body>
-  <h1><b>Welcome to my web sight></b></h1>
-<h2>
-  <script></script>
-  <footer>&copy; 2022 IsaTech Inc.</footer>
-</body>
-</html>"""
+# # Create the html file
+# html = """<!DOCTYPE html>
+# <html>
+# <head>
+#   <style>
+#     body {
+#       background-color: black;
+#       color: white;
+#       text-align: center;
+#       font-family: Arial Black;
+#     }
+#   </style>
+# </head>
+# <body>
+#   <h1><b>Welcome to my web sight></b></h1>
+# <h2>
+#   <script></script>
+#   <footer>&copy; 2022 IsaTech Inc.</footer>
+# </body>
+# </html>"""
+#
+# with open(os.path.join(directory, folder_name, 'index.html'), 'w') as f:
+#     f.write(html)
 
+
+
+# Create the main window
+
+# Set the path to the HTML config file
+html_config_path = 'file.html'
+
+# Read the HTML config file
+with open(html_config_path, 'r') as f:
+    html = f.read()
+
+# Create the html file
 with open(os.path.join(directory, folder_name, 'index.html'), 'w') as f:
     f.write(html)
 
 
-# Create the main window
 window = tk.Tk()
 window.title("Task Completed")
 
@@ -83,7 +97,6 @@ def open_in_vs_code():
     window.destroy()
     # Open the folder in a new Visual Studio Code window
     os.system(f'start code "{directory}"')
-
 
 # Create the "Close" button
 close_button = tk.Button(window, text="Close", command=close_window)
